@@ -1,0 +1,205 @@
+
+<html>
+<head>
+    <title>A Bell Tower</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+<script src="script.js"></script>
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+<style type="text/css">
+
+  body {
+      font-family: sans-serif;
+      font-size: 20px;
+      margin: 0;
+      height: 100vh;
+      overflow-x: hidden;
+    /*    overflow: hidden;*/
+  }
+
+  input  {
+    width: 19%;
+    padding-top: 8px;
+    margin: 0;
+    border: none;
+    font-family: sans-serif;
+    font-size: 22px;
+    display: inline-block;
+  }
+
+  .background {
+    position:fixed;
+    width: 57%;
+    height: 100%;
+    top: 14%;
+    right:0;
+    margin-right: 30px;
+  }
+
+  img {
+    height: 81%;
+  }
+
+  img:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+.text { 
+    top: 14%;
+    text-align: left;
+    font-size: 15px;
+    width: 36%;
+    margin: 30px;
+    position: absolute;
+    z-index: 50;
+    overflow-y: scroll;
+ }
+
+ p {
+/*    text-indent: 6%; 
+*/ }
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.timers {
+    margin-top: 0px;
+    padding-top: 15px;
+    margin-left: 15px;
+    position: fixed;
+    width: 100%
+    height: 20%;
+    background-color: white;
+    z-index: 100;
+}
+span.b {
+
+}
+
+.tower-font {
+    font-size: 35px;
+    margin-top: 0;
+    font-family: 'Caveat', cursive;
+}
+
+input.tower {
+    font-family: 'Caveat', cursive;  
+    font-size: 35px;
+    padding-top: 3px;
+}
+
+#txt {
+    width: 200px;
+    height: 50px;
+    display: inline-block;
+}
+
+p.info {
+    font-family: 'Caveat', cursive;  
+    font-size: 28px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 1200px) { 
+    
+    .flip-card {
+    float: left;
+    margin:0;
+    width: 45%;
+    }
+
+  }
+
+
+   @media screen and (max-width: 414px) { 
+
+   .timers, table, .tower-font, #txt, .tower {
+    display: none;
+   }
+
+  }
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+</style>
+</head>
+<body onload="startTime(); TimerThread()"> 
+<form name="clock" onsubmit="0">
+<div class="timers">
+<div>
+<span class="b"><input value="International Atomic Time"></span>
+<span class="b"><input name="ans5a" size="30" value="converting"></span>
+<span class="b"><input name="ans5b" size="30" value="converting"></span>
+<span class="b"><input name="ans5c" size="30" value="converting"></span>
+<span class="b"><input name="ans5d" size="30" value="converting"></span>
+</div>
+<div>
+<span class="b"><input value="Coordinated Universal Time"></span>
+<span class="b"><input name="ans2a" size="30" value="converting"></span>
+<span class="b"><input name="ans2b" size="30" value="converting"></span>
+<span class="b"><input name="ans2c" size="30" value="converting"></span>
+<span class="b"><input name="ans2d" size="30" value="converting"></span>
+</form>
+</div>
+<div class="tower-font">
+<span class="tower"><input class="tower" value="Local Tower Time"></span>
+<span id="txt"><input value=""></span>
+</div>
+<div class="background"><div class="shakeOne"><img src="img.jpg"></div></div>
+</div>
+
+<div class="text">
+<p>Work and time are essential aspects of social structure and function, and control of time, and power over time, are essential components in the functioning of societies. Prior to clocks, bells were used to chime the hours of work. The unit of work in the medieval West was the day. The urban workday was defined with reference to variable nature time, from sunrise to sunset. Night work was generally seen as an urban heresy, generally prohibited and subject to fines. From the end of the 13th century, this system of labor time was under challenge, and conflicts over night work contributed to stricter definition and measurement, as well as social conflicts over the duration of work. At first it was the workers who wanted a longer workday, to increase their wages during the first monetary crisis when prices rose and wages fell. In Paris, Philip the Fair authorized night work on January 19, 1322. In response, employers sought to regulate the workday more closely and to combat worker’s cheating. Time came to be integrated into daily life. Work bells, rung by hand by pulling a rope attached to the bell, proliferated. Worker uprisings were subsequently aimed at silencing the “werkglocken” in an expression of resentment and mistrust of those who controlled them. Rather than the uncertain times of the church bells, were the certain hours of the work bells, a sort of chronological net in which urban life was caught.</p>
+<p>
+Much work (especially in so-called Fordist work) used to – and still do – structure workers’ time and in so doing also liberate them from it. The division of labour forces the worker to contain its libidinal energies into specific units of the day (work-hours). And when leaving work – leisure and pleasure time begin. Increasingly though urban citizens are forced to shift between work time and work time instead of work time and leisure time. Capital has many ways of robbing the worker of time, diminishing personal time, and getting us to work faster: the socially necessary labor time is squeezed to a minimum and unevenly reinforced. Alienated work is becoming a form of unalienated work. Employed on zero hour contracts and fluctuating between three or more jobs leisure and pleasure time are no longer contrasted.</p> 
+<p>
+What happens to free time, to communist time, to the immeasurable rhythms of the body and its drives when there are no limits, when productive labour doesn’t structure our time in the same way? How do we release our erotic and free moving energies – potentialities – if there is nothing to measure or limit it against? Instead of asking for productive labour to do this, can we impose our own limits and transcendental horizons and so produce an emancipated praxis?</p> 
+<p>
+The bell tower rings at noon (or the medieval <span style="font-family:'Caveat'; font-size: 15px">None</span>), at midnight, at 6am and 6pm–today, tomorrow, and every day to come. It rings for all workers everywhere. A framework to take a break, remember time and each other: songs towards an emancipatory division of time and work.</p> 
+
+<p class="info"><a href="favicon_io.zip" download>>>> Download the Bell Tower Extension</p></a>
+
+<p>To install, unzip, open chrome://extensions, enable developer mode, click "load unpacked" and chose the extension folder. Sound by L Heron.</p>
+</div> 
+</div>
+
+</body></html>
